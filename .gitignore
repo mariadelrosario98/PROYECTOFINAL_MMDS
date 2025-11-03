@@ -136,6 +136,10 @@ celerybeat.pid
 
 # Data
 DATA/soc-LiveJournal1.txt
+C:\Users\ASUS\Documents\Maestria Ciencia de los Datos\TERCER SEMESTRE\MINERIA DE GRANDES VOLUMENES INFO\PROYECTO FINAL\infraestructure\s3\.terraform
+C:\Users\ASUS\Documents\Maestria Ciencia de los Datos\TERCER SEMESTRE\MINERIA DE GRANDES VOLUMENES INFO\PROYECTO FINAL\infraestructure\s3\.terraform.lock.hcl
+C:\Users\ASUS\Documents\Maestria Ciencia de los Datos\TERCER SEMESTRE\MINERIA DE GRANDES VOLUMENES INFO\PROYECTO FINAL\infraestructure\s3\terraform.tfstate
+
 
 # Environments
 .env
