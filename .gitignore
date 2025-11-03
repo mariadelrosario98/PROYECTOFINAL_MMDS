@@ -134,10 +134,12 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Data
+DATA/soc-LiveJournal1.txt
+
 # Environments
 .env
 .envrc
-.venv
 env/
 venv/
 ENV/

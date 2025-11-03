@@ -2,7 +2,6 @@ import asyncio
 import aiofiles
 import os
 
-# Ruta al archivo de datos
 FILE_PATH = r"C:\Users\ASUS\Documents\Maestria Ciencia de los Datos\TERCER SEMESTRE\MINERIA DE GRANDES VOLUMENES INFO\PROYECTO FINAL\DATA\soc-LiveJournal1.txt"
 
 async def read_large_file_async(file_path):
@@ -15,13 +14,15 @@ async def read_large_file_async(file_path):
         
         async with aiofiles.open(file_path, mode="r", encoding="utf-8") as f:
             line_count = 0
-                        async for line in f:
+            
+            async for line in f:
                 line_count += 1
                 
                 if line.startswith('#'):
                     if line_count == 4:
-                    continue
-                
+                        print(f"Encontrada cabecera de datos: {line.strip()}") 
+                    continue 
+
                 try:
                     parts = line.split()
                     
@@ -32,8 +33,9 @@ async def read_large_file_async(file_path):
                         if line_count <= 9: 
                             print(f"ARISTA {line_count - 4}: {from_node} -> {to_node}")
                         
+
                 except ValueError:
-¿                    pass
+                    pass
             
             print(f"\n Procesamiento completado. Total de líneas leídas (incl. meta): {line_count}")
 
