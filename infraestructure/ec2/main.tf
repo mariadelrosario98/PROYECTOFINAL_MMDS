@@ -55,7 +55,7 @@ resource "aws_security_group" "ssm_sg" {
 
   tags = {
     Name = "SSM-Only-SG"
-  }
+  } 
 }
 
 # --------------------------------------------------------------------------------------------------
@@ -84,6 +84,7 @@ resource "aws_instance" "t2_medium_ssm" {
   vpc_security_group_ids      = [aws_security_group.ssm_sg.id]
   # Asocia el Perfil de Instancia que creamos en el paso 1
   iam_instance_profile        = aws_iam_instance_profile.ssm_instance_profile.name
+  user_data = file("${path.module}/install_spark.sh")
   
   # Si la pones en una subred privada, esta opción debe ser 'false'
   # Si la pones en una subred pública (sin EIP), esta opción debe ser 'true'

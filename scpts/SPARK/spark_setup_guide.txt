@@ -1,0 +1,36 @@
+1. Connection Method (SSM)
+Action: Log in to the AWS Management Console.
+
+Path: Navigate to AWS Systems Manager -> Session Manager.
+
+Target: Select your EC2 instance (e.g., T2-Medium-with-SSM-Access) and start a session.
+
+2. Activate the Virtual Environment
+Once the shell loads, you must activate the Python virtual environment (spark_env) where you installed PySpark:
+
+Bash
+
+# This loads your virtual environment and changes the prompt to (spark_env)
+source /home/PROYECTO/spark/spark_env/bin/activate
+3. Load Environment Variables
+You must reload the system profile to ensure $SPARK_HOME, $JAVA_HOME, and $PATH are correctly set for the Spark binaries:
+
+Bash
+
+# This loads SPARK_HOME and JAVA_HOME
+source /etc/profile
+4. Start the Spark Master (Optional, but Recommended)
+For consistent performance and access to the web UI (port 8080), restart the standalone Master service:
+
+Bash
+
+# The Spark Master runs in the background
+sudo $SPARK_HOME/sbin/start-master.sh
+5. Launch PySpark with Dependencies
+To run your GraphFrames analysis, you need to use the pyspark command with the correct package coordinates for GraphFrames and S3 access. This is the most critical command to document.
+
+Bash
+
+# This launches the PySpark shell with all required JARs
+pyspark --packages graphframes:graphframes:0.8.2-spark3.5,org.apache.hadoop:hadoop-aws:3.3.4
+(If you are running a script, you would use spark-submit with the same --packages arguments.)
