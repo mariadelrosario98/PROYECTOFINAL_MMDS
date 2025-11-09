@@ -1,0 +1,12 @@
+Execution time: 48.710355 seconds,
+Numero Nodos: 5021987,
+Numero Aristas: 14895301,
+Grado: 1850 (NODO_001),
+Cercania Promedio: 0.285,
+Clustering Promedio: 0.00000059,
+Modularidad: 0.00000059,
+Componentes Conectados:
+Nodos Aislados: 10501,
+Nodos Conectados (Grado > 0): 5011486,
+Centralidad de Grado: 
+node degree NODO_001 1850 NODO_002 1621 NODO_003 1598 NODO_10K 924 NODO_50K 450 ... ... NODO_4M 1 NODO_5M 1
